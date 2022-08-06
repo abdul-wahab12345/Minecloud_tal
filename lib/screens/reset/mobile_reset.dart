@@ -1,24 +1,23 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:minecloud_tal/common/theme/text.dart';
 import 'package:minecloud_tal/widgets/textFieldW.dart';
 
-import '../common/theme/colors.dart';
-import '../common/theme/constants.dart';
-import '../widgets/components/login_bottomSignUp.dart';
-import '../widgets/buttonsWs.dart';
-import '../widgets/simpleWs.dart';
-import 'login_page.dart';
+import '../../common/theme/colors.dart';
+import '../../common/theme/constants.dart';
+import '../../widgets/components/login_bottomSignUp.dart';
+import '../../widgets/buttonsWs.dart';
+import '../../widgets/simpleWs.dart';
+import '../login/login.dart';
 
-class ResetPassPage extends StatefulWidget {
-  const ResetPassPage({Key? key}) : super(key: key);
+class MobileResetPass extends StatefulWidget {
+  const MobileResetPass({Key? key}) : super(key: key);
 
   @override
-  State<ResetPassPage> createState() => _ResetPassPageState();
+  State<MobileResetPass> createState() => _MobileResetPassState();
 }
 
-class _ResetPassPageState extends State<ResetPassPage> {
+class _MobileResetPassState extends State<MobileResetPass> {
   @override
   Widget build(BuildContext context) {
     Widget containerDivider() =>
@@ -64,7 +63,7 @@ class _ResetPassPageState extends State<ResetPassPage> {
                     secondaryIconButton(
                       text: 'Log In',
                       onPressed: () =>
-                          kPushNavigator(context, const LoginPage())
+                          kPushNavigator(context,  LoginScreen())
                     ),
 
                   ],

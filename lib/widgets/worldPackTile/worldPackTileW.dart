@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:minecloud_tal/common/theme/constants.dart';
 
 import '../../common/theme/colors.dart';
 import '../../common/theme/text.dart';
 import '../../functions/bottomSheetW.dart';
+import '../../functions/webdefaultdialog.dart';
 import 'leading_image.dart';
 
-Widget worldPackTile(context, {
-      required bool isPack,
-      required BottomSheetType bottomSheetType,
-      required String title,
-      required String image,
+Widget worldPackTile(
+  context, {
+  required bool isPack,
+  required BottomSheetType bottomSheetType,
+  required String title,
+  bool? isLocalpage,
+  required String image,
 }) {
-  return
-    Card(
+  return Card(
     margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8), // <-- Radius
     ),
     color: kTapBorderAssets,
     child: ListTile(
-      onTap: () => showMyBottomSheet(context,
-          title: title,
-          isPack: isPack,
-          bottomSheetType: bottomSheetType
-      ),
+      onTap: () {
+        print(maxWidth(context));
+        if (maxWidth(context) < 1000) {
+          showMyBottomSheet(context,
+              title: title, isPack: isPack, bottomSheetType: bottomSheetType);
+        }
+         if(maxWidth(context) >= 1000) {
+         showWebDialog(context: context, isPack: isPack, title: title, OkayBtn:isLocalpage!?'Upload':'Download', cancelBtn: 'Delete');
+        }
+      },
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 6,
       ),

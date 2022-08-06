@@ -27,7 +27,6 @@ dev_dependencies:
 
 flutter:
   assets:
-#    - assets/rilMan.riv
     - assets/
     - assets/images/
     - assets/svg/

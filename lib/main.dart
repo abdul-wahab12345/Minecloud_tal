@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:minecloud_tal/screens/Dashboard/dashboard.dart';
+import 'package:minecloud_tal/screens/login/login.dart';
 import 'package:minecloud_tal/screens/onBoarding_page.dart';
-import 'package:minecloud_tal/screens/login_page.dart';
 import 'package:provider/provider.dart';
 
 import 'common/models/universal_models.dart';
-import 'dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,13 +39,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'MiniCLoud',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      // home: const LoginPage(),
-      home: const OnBoardingPage(),
+      home:  OnBoardingPage(),
+      // home:  DashBoard(),
       // home: const Dashboard(),
     );
   }

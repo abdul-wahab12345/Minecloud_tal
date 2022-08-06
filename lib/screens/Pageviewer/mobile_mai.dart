@@ -1,28 +1,27 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:minecloud_tal/common/theme/constants.dart';
 import 'package:minecloud_tal/common/theme/text.dart';
 import 'package:minecloud_tal/functions/bottomSheetW.dart';
-import '../common/theme/colors.dart';
-import '../widgets/drawerW.dart';
-import '../widgets/worldPackTile/worldPackTileW.dart';
+import '../../common/theme/colors.dart';
+import '../../widgets/worldPackTile/worldPackTileW.dart';
 
-class MainPage extends StatefulWidget {
+class MobileMainPage extends StatefulWidget {
   final bool isLocalPage;
   final bool isPackView;
 
-  const MainPage(
+  const MobileMainPage(
       {required this.isLocalPage, required this.isPackView, Key? key})
       : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<MobileMainPage> createState() => _MobileMainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MobileMainPageState extends State<MobileMainPage> {
   String sortBy = 'Name';
   bool isExpanded = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,22 +32,24 @@ class _MainPageState extends State<MainPage> {
             padding: const EdgeInsets.only(top: 8.0),
             child: Column(
               children: [
-                
                 Align(
                   alignment: Alignment.centerLeft,
                   child: InkWell(
-                    onTap: (){
+                    onTap: () {
                       showMyBottomSheet(context,
                           title: 'Sort by',
-                          bottomSheetType: BottomSheetType.sortBy
-                      );
+                          bottomSheetType: BottomSheetType.sortBy);
                     },
                     child: Container(
-                      padding: const EdgeInsets.fromLTRB(12,8,12,8),
+                      padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(kUniModel(context, listen: true).sortBy, style: poppinsRegular().copyWith(color: kDetailedWhite60),),
+                          Text(
+                            kUniModel(context, listen: true).sortBy,
+                            style: poppinsRegular()
+                                .copyWith(color: kDetailedWhite60),
+                          ),
                           const SizedBox(width: 8),
                           Icon(Icons.south, color: kDetailedWhite60, size: 14),
                         ],

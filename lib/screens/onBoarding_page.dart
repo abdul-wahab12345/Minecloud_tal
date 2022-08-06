@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 import 'package:minecloud_tal/common/theme/colors.dart';
 import 'package:minecloud_tal/common/theme/text.dart';
-import 'package:minecloud_tal/screens/login_page.dart';
+import 'package:minecloud_tal/screens/login/login.dart';
 
 import '../common/theme/constants.dart';
 import '../widgets/buttonsWs.dart';
@@ -112,7 +110,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: _selectedIndex == 2
                       ? positiveButton('Get Started',
-                          onPressed: () => kPushNavigator(context, const LoginPage(),
+                          onPressed: () => kPushNavigator(context,  LoginScreen(),
                               replace: true))
                       : positiveButton('Next', onPressed: () async {
                           // _pageController.jumpToPage(pageIndex);
